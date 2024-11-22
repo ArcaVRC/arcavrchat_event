@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>교류회 양식</title>
+    <style>
+        body {
+            font-family: 'NanumBarunGothic', sans-serif;
+        }
+
+        textarea, input[type="text"] {
+            width: 800px;
+        }
+
+        textarea {
+            resize: none;
+        }
+
+        textarea[name="교류회 주제"] {
+            height: 30px;
+        }
+
+        textarea:not([name="교류회 주제"]) {
+            height: 100px;
+        }
+
+        input[type="number"] {
+            width: 50px;
+        }
+
+        select {
+            margin-left: 10px;
+        }
+
+        .bold {
+            font-weight: bold;
+            font-size: 18px;
+        }
+		
+		.italic {
+            font-style: italic;
+        }
+
+        /* 특정성 높은 선택자 */
+        form#exchangeForm select.hidden {
+            display: none;
+        }
+
+        form#exchangeForm input.hidden {
+            display: none;
+        }
+
+        #output {
+            margin-top: 30px;
+            padding: 15px;
+            border: 1px solid #ccc;
+            background: #f9f9f9;
+            white-space: pre-wrap;
+        }
+
+        a {
+            color: blue;
+            text-decoration: underline;
+        }
+    </style>
+    <script>
+        function populateOptions() {
+            const yearSelect = document.getElementById("year");
+            for (let i = 2024; i <= 2026; i++) {
+                const option = document.createElement("option");
+                option.value = i;
+                option.textContent = i;
+                yearSelect.appendChild(option);
+            }
+
+            const monthSelect = document.getElementById("month");
+            for (let i = 1; i <= 12; i++) {
+                const option = document.createElement("option");
+                option.value = String(i).padStart(2, '0');
+                option.textContent = String(i).padStart(2, '0');
+                monthSelect.appendChild(option);
+            }
+
+            const daySelect = document.getElementById("day");
+            for (let i = 1; i <= 31; i++) {
+                const option = document.createElement("option");
+                option.value = String(i).padStart(2, '0');
+                option.textContent = String(i).padStart(2, '0');
+                daySelect.appendChild(option);
+            }
+
+            const hourSelects = document.querySelectorAll(".hour");
+            hourSelects.forEach(select => {
+                for (let i = 0; i < 24; i++) {
+                    const option = document.createElement("option");
+                    option.value = String(i).padStart(2, '0');
+                    option.textContent = String(i).padStart(2, '0');
+                    select.appendChild(option);
+                }
+            });
+
+            const minuteSelects = document.querySelectorAll(".minute");
+            minuteSelects.forEach(select => {
+                for (let i = 0; i < 60; i += 5) {
+                    const option = document.createElement("option");
+                    option.value = String(i).padStart(2, '0');
+                    option.textContent = String(i).padStart(2, '0');
+                    select.appendChild(option);
+                }
+            });
+        }
+
+        function toggleInput(select, inputId) {
+            const inputField = document.getElementById(inputId);
+
+            // "기타", "풀트", "반트" 선택 시 보여주기
+            if (select.value === "기타" || select.value === "풀트" || select.value === "반트") {
+                inputField.classList.remove("hidden");
+            } else {
+                inputField.classList.add("hidden");
+                inputField.value = ""; // 초기화
+            }
+        }
+
+        function generateOutput() {
+            const form = document.getElementById("exchangeForm");
+            let output = "";
+
+            output += `<p><strong style="font-size: 18px;">① 교류회 주제</strong></p>\n<p>${form["교류회 주제"].value}</p>\n<br>\n`;
+
+            output += `<p><strong style="font-size: 18px;">② 교류회에서 하려는 것</strong></p>\n<p>${form["교류회에서 하려는 것"].value}</p>\n<br>\n`;
+
+            output += `<p><strong style="font-size: 18px;">③ 교류회 일정 및 속성</strong></p>\n`;
+            output += `<p>${form["년도"].value}년 ${form["월"].value}월 ${form["일"].value}일</p>\n`;
+            output += `<p>${form["시작 시간"].value}:${form["시작 분"].value} ~ ${form["종료 시간"].value}:${form["종료 분"].value}</p>\n<br>\n`;
+            output += `<p>- 집합 장소: <a href="https://vrchat.com/home/world/wrld_c83f258f-e8f3-44a9-b8da-ed7a09e001c3/info" target="_blank">New Arcalive</a></p>\n`;
+            output += `<p>- 최대 인원: ${form["최대 인원"].value}명</p>\n`;
+            output += `<p>- 기기 사용 여부: ${form["기기 사용 여부"].value}`;
+            if (form["기기 사용 여부"].value === "풀트" || form["기기 사용 여부"].value === "반트") {
+                output += ` (${form["기기 권장 여부"].value})`;
+            }
+            output += `</p>\n`;
+            output += `<p>- 묵언 허용 여부: ${form["묵언 허용 여부"].value}</p>\n<br>\n`;
+
+            output += `<p><strong style="font-size: 18px;">④ 기본 규칙</strong></p>\n`;
+            output += `<p>- PCSS 금지, 무단 이용 아바타 금지</p>\n`;
+            output += `<p>- 텍스쳐 메모리: ${form["텍스쳐 메모리"].value}MB 초과 불가</p>\n`;
+            output += `<p>- 교류회 중엔 최소 주황불로 설정, 임의로 포탈 설치 금지</p>\n`;
+            output += `<p>- 매너에 어긋나는 행동 금지 (허가/동의 없는 몰카 등)</p>\n`;
+            output += `<p>- 채널의 <a href="https://arca.live/b/vrchat/115332675" target="_blank">교류회 규칙 전문</a> (한 번은 꼭 읽어볼 것)</p>\n<br>\n`;
+
+            const 복장규칙 = form["복장 규칙"].value === "기타" ? form["복장 기타"].value : form["복장 규칙"].value;
+            output += `<p><strong style="font-size: 18px;">⑤ 복장 규칙</strong></p>\n<p>${복장규칙}</p>\n<br>\n`;
+
+            const 행동규칙 = form["상호 행동 규칙"].value === "기타" ? form["행동 기타"].value : form["상호 행동 규칙"].value;
+            output += `<p><strong style="font-size: 18px;">⑥ 상호 행동 규칙</strong></p>\n<p>${행동규칙}</p>\n<br>\n`;
+
+            output += `<p><strong style="font-size: 18px;">⑦ 그 외 안내사항</strong></p>\n<p>${form["추가 안내 규칙"].value}</p>\n<br>\n`;
+
+            output += `<p><strong style="font-size: 18px;">⑧ 규칙 위반 시 대응</strong></p>\n<p>${form["규칙 위반 시 대응"].value}</p>\n`;
+
+            document.getElementById("output").textContent = output;
+
+            return output; // 복사를 위해 반환
+        }
+
+        function generateAndCopy() {
+            const output = generateOutput();
+            navigator.clipboard.writeText(output)
+                .then(() => alert("클립보드 복사 완료, 글쓰기에서 소스 코드에 붙여넣기"))
+                .catch(err => alert("클립보드 복사에 실패: " + err));
+        }
+
+        window.onload = populateOptions;
+    </script>
+</head>
+<body>
+    <h1>교류회 양식</h1>
+    <form id="exchangeForm">
+        <label class="bold">(1) 교류회 주제:</label><br>
+        <textarea name="교류회 주제" placeholder="ex)음주교류회, 저댄교류회"></textarea><br><br>
+
+        <label class="bold">(2) 교류회에서 하려는 것:</label><br>
+        <textarea name="교류회에서 하려는 것" placeholder="ex)간단하게(노래 들으면서 술먹기) 또는 자세하게(술 먹으면서 중간중간 벌칙 걸고 술게임 하는 음주교류회)"></textarea><br><br>
+
+        <label class="bold">(3) 교류회 일정 및 속성:</label><br>
+        <select id="year" name="년도"></select>
+        <select id="month" name="월"></select>
+        <select id="day" name="일"></select><br>
+        <select class="hour" name="시작 시간"></select>
+        :
+        <select class="minute" name="시작 분"></select>
+        ~
+        <select class="hour" name="종료 시간"></select>
+        :
+        <select class="minute" name="종료 분"></select><br><br>
+        <label>- 집합 장소:</label>
+        <a href="https://vrchat.com/home/world/wrld_c83f258f-e8f3-44a9-b8da-ed7a09e001c3/info" target="_blank">New Arcalive</a><br>
+        <label>- 최대 인원:</label>
+        <input type="number" name="최대 인원" value="30">명<br>
+        <label>- 기기 사용 여부:</label>
+        <select name="기기 사용 여부" onchange="toggleInput(this, '기기_권장_필수')">
+            <option>자유</option>
+            <option>반트</option>
+            <option>풀트</option>
+        </select>
+        <select id="기기_권장_필수" name="기기 권장 여부" class="hidden">
+            <option>권장</option>
+            <option>필수</option>
+        </select><br>
+        <label>- 묵언 허용 여부:</label>
+        <select name="묵언 허용 여부">
+            <option>가능</option>
+            <option>데탑이면 불가능</option>
+            <option>불가능</option>
+        </select><br><br>
+
+        <label class="bold">(4) 기본 규칙:</label><br>
+        - PCSS 금지, 무단 이용 아바타 금지<br>
+        - 텍스쳐 메모리:
+        <input type="number" name="텍스쳐 메모리" value="250">MB 초과 불가 (최대 250)<br>
+        - 교류회 중엔 최소 주황불로 설정, 임의로 포탈 설치 금지<br>
+        - 매너에 어긋나는 행동 금지 (허가/동의 없는 몰카 등)<br>
+        - 채널의 <a href="https://arca.live/b/vrchat/115332675" target="_blank">교류회 규칙 전문</a> (한 번은 꼭 읽어볼 것)<br><br>
+
+        <label class="bold">(5) 복장 규칙:</label><br>
+        <select name="복장 규칙" onchange="toggleInput(this, '복장_기타')">
+            <option>건전하게</option>
+            <option>적당한 노출</option>
+            <option>자유롭게</option>
+            <option>알몸만</option>
+            <option value="기타">기타</option>
+        </select>
+        <input type="text" id="복장_기타" name="복장 기타" class="hidden" placeholder="기타 내용을 입력"><br><br>
+		<span class="italic">프리셋 설명<br>
+		* 건전하게 = 상식적으로 공공장소에서 입을 수 있는 천 면적<br>
+		* 적당한 노출 = 일반적인 면적보다 조금 작은 비키니까지, 단 마이크로 비키니는 아님<br>
+		* 자유롭게/알몸만 = 특수룰 아니어도 선택 가능</span><br><br>
+
+        <label class="bold">(6) 상호 행동 규칙:</label><br>
+        <select name="상호 행동 규칙" onchange="toggleInput(this, '행동_기타')">
+            <option>건전하게</option>
+            <option>성행위는 빼고</option>
+            <option>자유롭게</option>
+            <option value="기타">기타</option>
+        </select>
+        <input type="text" id="행동_기타" name="행동 기타" class="hidden" placeholder="기타 내용을 입력"><br><br>
+		<span class="italic">프리셋 설명<br>
+		* 건전하게 = 쓰담, 볼터치 등 약한 행위까지만<br>
+		* 성행위는 빼고 = 성행위 기준은 규칙 전문을 참고<br>
+		* 자유롭게 = 특수룰 아니면 선택 불가능</span><br><br>
+
+        <label class="bold">(7) 그 외 안내사항:</label><br>
+        <textarea name="추가 안내 규칙" placeholder="위에 없는 내용 중 알아야 할 내용들은 여기에"></textarea><br><br>
+
+        <label class="bold">(8) 규칙 위반 시 대응:</label><br>
+        <textarea name="규칙 위반 시 대응" placeholder="ex)1회 경고, 2회 킥"></textarea><br><br>
+
+        <button type="button" onclick="generateOutput()">내용 생성</button>
+        <button type="button" onclick="generateAndCopy()">내용 생성 및 클립보드로 복사</button>
+    </form>
+
+    <div id="output"></div>
+</body>
+</html>
