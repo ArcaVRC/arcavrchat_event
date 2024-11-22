@@ -127,11 +127,11 @@
 	    const form = document.getElementById("exchangeForm");
 	    let output = "";
 	
-	    // 기존 부분: 제목과 입력값 직접 추가
+	    // 기존: 수동으로 출력되는 항목
 	    output += `<p><strong style="font-size: 18px;">① 교류회 주제</strong></p>\n<p>${form["교류회 주제"].value}</p>\n<br>\n`;
-	
 	    output += `<p><strong style="font-size: 18px;">② 교류회에서 하려는 것</strong></p>\n<p>${form["교류회에서 하려는 것"].value.replace(/\n/g, "<br>")}</p>\n<br>\n`;
 	
+	    // 일정 및 속성
 	    output += `<p><strong style="font-size: 18px;">③ 교류회 일정 및 속성</strong></p>\n`;
 	    output += `<p>${form["년도"].value}년 ${form["월"].value}월 ${form["일"].value}일</p>\n`;
 	    output += `<p>${form["시작 시간"].value}:${form["시작 분"].value} ~ ${form["종료 시간"].value}:${form["종료 분"].value}</p>\n<br>\n`;
@@ -144,6 +144,7 @@
 	    output += `</p>\n`;
 	    output += `<p>- 묵언 허용 여부: ${form["묵언 허용 여부"].value}</p>\n<br>\n`;
 	
+	    // 기본 규칙
 	    output += `<p><strong style="font-size: 18px;">④ 기본 규칙</strong></p>\n`;
 	    output += `<p>- PCSS 금지, 무단 이용 아바타 금지</p>\n`;
 	    output += `<p>- 텍스쳐 메모리: ${form["텍스쳐 메모리"].value}MB 초과 불가</p>\n`;
@@ -151,13 +152,17 @@
 	    output += `<p>- 매너에 어긋나는 행동 금지 (허가/동의 없는 몰카 등)</p>\n`;
 	    output += `<p>- 채널의 <a href="https://arca.live/b/vrchat/115332675" target="_blank">교류회 규칙 전문</a> (한 번은 꼭 읽어볼 것)</p>\n<br>\n`;
 	
-	    // 새로운 동적 처리 부분: 모든 textarea 값 처리
+	    // 모든 textarea 처리: 특정 항목 제외
 	    const textareas = form.querySelectorAll("textarea");
 	    textareas.forEach((textarea) => {
-	        const label = textarea.previousElementSibling; // textarea 바로 위의 라벨 가져오기
-	        const textValue = textarea.value.replace(/\n/g, "<br>"); // 줄바꿈을 <br>로 변환
+	        const label = textarea.previousElementSibling;
+	        const textValue = textarea.value.replace(/\n/g, "<br>");
+	        
+	        // 특정 이름 제외 (이미 수동 출력된 경우)
+	        if (textarea.name === "교류회 주제" || textarea.name === "교류회에서 하려는 것") {
+	            return;
+	        }
 	
-	        // 추가할 출력물 생성
 	        if (label && label.textContent) {
 	            output += `<p><strong style="font-size: 18px;">${label.textContent}</strong></p>\n`;
 	        }
@@ -172,14 +177,13 @@
 	    const 행동규칙 = form["상호 행동 규칙"].value === "기타" ? form["행동 기타"].value : form["상호 행동 규칙"].value;
 	    output += `<p><strong style="font-size: 18px;">⑥ 상호 행동 규칙</strong></p>\n<p>${행동규칙}</p>\n<br>\n`;
 	
-	    // 기존 부분: 그 외 안내사항 및 규칙 위반 대응
+	    // 그 외 안내사항 및 규칙 위반 시 대응
 	    output += `<p><strong style="font-size: 18px;">⑦ 그 외 안내사항</strong></p>\n<p>${form["추가 안내 규칙"].value.replace(/\n/g, "<br>")}</p>\n<br>\n`;
-	
 	    output += `<p><strong style="font-size: 18px;">⑧ 규칙 위반 시 대응</strong></p>\n<p>${form["규칙 위반 시 대응"].value.replace(/\n/g, "<br>")}</p>\n`;
 	
-	    document.getElementById("output").textContent = output; // 출력 영역에 적용
+	    document.getElementById("output").innerHTML = output;
 	
-	    return output; // 복사를 위해 반환
+	    return output;
 	}
 
         function generateAndCopy() {
