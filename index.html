@@ -128,7 +128,7 @@
 	    let output = "";
 	
 	    // 기존: 수동으로 출력되는 항목
-	    output += `<p><strong style="font-size: 18px;">① 교류회 주제</strong></p>\n<p>${form["교류회 주제"].value}</p>\n<br>\n`;
+	    output += `<p><strong style="font-size: 18px;">① 교류회 주제</strong></p>\n<p>${form["교류회 주제"].value.replace(/\n/g, "<br>")}</p>\n<br>\n`;
 	    output += `<p><strong style="font-size: 18px;">② 교류회에서 하려는 것</strong></p>\n<p>${form["교류회에서 하려는 것"].value.replace(/\n/g, "<br>")}</p>\n<br>\n`;
 	
 	    // 일정 및 속성
@@ -152,17 +152,23 @@
 	    output += `<p>- 매너에 어긋나는 행동 금지 (허가/동의 없는 몰카 등)</p>\n`;
 	    output += `<p>- 채널의 <a href="https://arca.live/b/vrchat/115332675" target="_blank">교류회 규칙 전문</a> (한 번은 꼭 읽어볼 것)</p>\n<br>\n`;
 	
-	    // 모든 textarea 처리: 특정 항목 제외
+	    // 동적으로 처리할 textarea: 특정 이름 제외
 	    const textareas = form.querySelectorAll("textarea");
 	    textareas.forEach((textarea) => {
 	        const label = textarea.previousElementSibling;
 	        const textValue = textarea.value.replace(/\n/g, "<br>");
-	        
-	        // 특정 이름 제외 (이미 수동 출력된 경우)
-	        if (textarea.name === "교류회 주제" || textarea.name === "교류회에서 하려는 것") {
+	
+	        // 이미 수동으로 출력된 항목 제외
+	        if (
+	            textarea.name === "교류회 주제" ||
+	            textarea.name === "교류회에서 하려는 것" ||
+	            textarea.name === "추가 안내 규칙" ||
+	            textarea.name === "규칙 위반 시 대응"
+	        ) {
 	            return;
 	        }
 	
+	        // 출력
 	        if (label && label.textContent) {
 	            output += `<p><strong style="font-size: 18px;">${label.textContent}</strong></p>\n`;
 	        }
@@ -181,9 +187,9 @@
 	    output += `<p><strong style="font-size: 18px;">⑦ 그 외 안내사항</strong></p>\n<p>${form["추가 안내 규칙"].value.replace(/\n/g, "<br>")}</p>\n<br>\n`;
 	    output += `<p><strong style="font-size: 18px;">⑧ 규칙 위반 시 대응</strong></p>\n<p>${form["규칙 위반 시 대응"].value.replace(/\n/g, "<br>")}</p>\n`;
 	
-	    document.getElementById("output").innerHTML = output;
+	    document.getElementById("output").textContent = output;
 	
-	    return output;
+	    return output; // 복사를 위해 반환
 	}
 
         function generateAndCopy() {
