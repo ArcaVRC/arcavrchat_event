@@ -136,7 +136,7 @@
 	    output += `<p>${form["년도"].value}년 ${form["월"].value}월 ${form["일"].value}일</p>\n`;
 	    output += `<p>${form["시작 시간"].value}:${form["시작 분"].value} ~ ${form["종료 시간"].value}:${form["종료 분"].value}</p>\n<br>\n`;
 	    output += `<p>- 집합 장소: <a href="https://vrchat.com/home/world/wrld_c83f258f-e8f3-44a9-b8da-ed7a09e001c3/info" target="_blank">New Arcalive</a></p>\n`;
-	    output += `<p>- 최대 인원: ${form["최대 인원"].value}명</p>\n`;
+	    output += `<p>- 교류회 최대 인원: ${form["최대 인원"].value}명</p>\n`;
 	    output += `<p>- 기기 사용 여부: ${form["기기 사용 여부"].value}`;
 	    if (form["기기 사용 여부"].value === "풀트" || form["기기 사용 여부"].value === "반트") {
 	        output += ` (${form["기기 권장 여부"].value})`;
@@ -224,7 +224,7 @@
         <select class="minute" name="종료 분"></select><br><br>
         <label>- 집합 장소:</label>
         <a href="https://vrchat.com/home/world/wrld_c83f258f-e8f3-44a9-b8da-ed7a09e001c3/info" target="_blank">New Arcalive</a><br>
-        <label>- 최대 인원:</label>
+        <label>- 교류회 최대 인원:</label>
         <input type="number" name="최대 인원" value="30">명<br>
         <label>- 기기 사용 여부:</label>
         <select name="기기 사용 여부" onchange="toggleInput(this, '기기_권장_필수')">
