@@ -1,0 +1,602 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>🔞 교류회용</title>
+  <link rel="stylesheet" href="./style.css">
+  <style>
+    :root {
+      --bg-1: #1a0b12;
+      --bg-2: #2a1020;
+      --bg-3: #4d0f2a;
+    }
+  </style>
+</head>
+<body>
+  <main class="flow" aria-live="polite" aria-relevant="additions" aria-label="단계별 양식">
+      <h1 class="form-title">《🔞 교류회 양식》</h1>
+      <p style="color:#fff5a7;padding:.5rem;font-weight:700;">깡계 또는 교류회 주최 경험 5회 이하인 자는 🔞 교류회 주최 불가</p>
+      <!-- 1. 교류회 일정 (날짜, 시간, 픽업 여부) -->
+      <section class="step" data-require="selects">
+        <div class="label">1. 교류회 일정</div>
+        <div class="rules">
+          <div class="rule-row">
+            <div class="sub-label">날짜</div>
+            <div class="rule-field date">
+              <div class="field-group">
+                <label class="sr-only" for="m">월</label>
+                <select id="m" class="sel month" required>
+                  <option value="">월</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+                  <option value="11">11</option>
+                  <option value="12">12</option>
+                </select><span class="suffix">월</span>
+              </div>
+              <div class="field-group">
+                <label class="sr-only" for="d">일</label>
+                <select id="d" class="sel day" required>
+                  <option value="">일</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+                  <option value="11">11</option>
+                  <option value="12">12</option>
+                  <option value="13">13</option>
+                  <option value="14">14</option>
+                  <option value="15">15</option>
+                  <option value="16">16</option>
+                  <option value="17">17</option>
+                  <option value="18">18</option>
+                  <option value="19">19</option>
+                  <option value="20">20</option>
+                  <option value="21">21</option>
+                  <option value="22">22</option>
+                  <option value="23">23</option>
+                  <option value="24">24</option>
+                  <option value="25">25</option>
+                  <option value="26">26</option>
+                  <option value="27">27</option>
+                  <option value="28">28</option>
+                  <option value="29">29</option>
+                  <option value="30">30</option>
+                  <option value="31">31</option>
+                </select><span class="suffix">일</span>
+              </div>
+            </div>
+          </div>
+          <div class="rule-row">
+            <div class="sub-label">시간</div>
+            <div class="rule-field time">
+              <div class="field-group">
+                <label class="sr-only" for="sh">시작 시간 시</label>
+                <select id="sh" class="sel hour" required>
+                  <option value="">시</option>
+                  <option value="0">0</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+                  <option value="11">11</option>
+                  <option value="12">12</option>
+                  <option value="13">13</option>
+                  <option value="14">14</option>
+                  <option value="15">15</option>
+                  <option value="16">16</option>
+                  <option value="17">17</option>
+                  <option value="18">18</option>
+                  <option value="19">19</option>
+                  <option value="20">20</option>
+                  <option value="21">21</option>
+                  <option value="22">22</option>
+                  <option value="23">23</option>
+                </select><span class="suffix">시</span>
+              </div>
+              <div class="field-group">
+                <label class="sr-only" for="sm">시작 시간 분</label>
+                <select id="sm" class="sel minute" required>
+                  <option value="">분</option>
+                  <option value="5">5</option>
+                  <option value="10">10</option>
+                  <option value="15">15</option>
+                  <option value="20">20</option>
+                  <option value="25">25</option>
+                  <option value="30">30</option>
+                  <option value="35">35</option>
+                  <option value="40">40</option>
+                  <option value="45">45</option>
+                  <option value="50">50</option>
+                  <option value="55">55</option>
+                </select><span class="suffix">분</span>
+              </div>
+              <span class="sep">~</span>
+              <div class="field-group">
+                <label class="sr-only" for="eh">종료 시간 시</label>
+                <select id="eh" class="sel hour" required>
+                  <option value="">시</option>
+                  <option value="0">0</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+                  <option value="11">11</option>
+                  <option value="12">12</option>
+                  <option value="13">13</option>
+                  <option value="14">14</option>
+                  <option value="15">15</option>
+                  <option value="16">16</option>
+                  <option value="17">17</option>
+                  <option value="18">18</option>
+                  <option value="19">19</option>
+                  <option value="20">20</option>
+                  <option value="21">21</option>
+                  <option value="22">22</option>
+                  <option value="23">23</option>
+                </select><span class="suffix">시</span>
+              </div>
+              <div class="field-group">
+                <label class="sr-only" for="em">종료 시간 분</label>
+                <select id="em" class="sel minute" required>
+                  <option value="">분</option>
+                  <option value="5">5</option>
+                  <option value="10">10</option>
+                  <option value="15">15</option>
+                  <option value="20">20</option>
+                  <option value="25">25</option>
+                  <option value="30">30</option>
+                  <option value="35">35</option>
+                  <option value="40">40</option>
+                  <option value="45">45</option>
+                  <option value="50">50</option>
+                  <option value="55">55</option>
+                </select><span class="suffix">분</span>
+              </div>
+            </div>
+          </div>
+          <div class="rule-row">
+            <div class="sub-label">픽업 여부</div>
+            <div class="rule-field">
+              <label class="sr-only" for="pickup">픽업 여부</label>
+              <input id="pickup" class="txt title-half" type="text" placeholder="예시: 없음, 20분마다, 23시에 한 번 등" required>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. 교류회 제목 및 내용 (텍스트) -->
+      <section class="step collapsed" data-require="texts">
+        <div class="label">2. 교류회 제목 및 내용</div>
+        <div class="rules">
+          <div class="rule-row">
+            <div class="sub-label">제목</div>
+            <div class="rule-field">
+              <input id="title" class="txt title-big" type="text" placeholder="예시: 알음교, 어둠의 몸말 교류회 등" required>
+            </div>
+          </div>
+          <div class="rule-row">
+            <div class="sub-label">내용</div>
+            <div class="rule-field">
+              <input id="desc" class="txt title-big" type="text" placeholder="예시: 찌찌 보면서 술 먹기, 알몸으로 몸말하기 등" required>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. 기본 규칙 -->
+      <section class="step collapsed" data-require="rules">
+        <div class="label">3. 기본 규칙</div>
+          <div class="rules">
+            <div class="rule-row">
+              <div class="sub-label">집합 장소</div>
+              <div class="rule-field">
+                <div class="choicebar" role="group" data-target="worldName" data-target2="worldUrl" aria-label="집합 장소 선택">
+                  <button type="button" class="chip" data-value="New Arcalive" data-url="https://vrchat.com/home/world/wrld_c83f258f-e8f3-44a9-b8da-ed7a09e001c3">New Arcalive</button>
+                  <button type="button" class="chip" data-value="Arcalive 부끄러" data-url="https://vrchat.com/home/world/wrld_f760f71c-281d-4d26-93b3-0dbb983843ee" data-tooltip="출발 시간이 겹치지 않는 이상 New ArcaLive를 최우선으로 할 것">Arcalive 부끄러</button>
+                  <button type="button" class="chip custom" data-tooltip="출발 시간이 겹치지 않는 이상 New ArcaLive를 최우선으로 할 것">기타</button>
+                </div>
+                <input type="text" class="txt title-half chip-input" placeholder="월드 이름" hidden>
+                <input type="text" class="txt title-half chip-input" placeholder="월드 URL" hidden>
+                <input type="hidden" id="worldName" required>
+                <input type="hidden" id="worldUrl" required>
+              </div>
+            </div>
+            <div class="rule-row">
+              <div class="sub-label">교류회 정원</div>
+              <div class="rule-field inline">
+                <input id="quota" class="txt quota-small" type="text" placeholder="예시: 20" required><span class="suffix">명</span>
+              </div>
+            </div>
+            <div class="rule-row">
+              <div class="sub-label">텍스쳐 메모리 제한</div>
+              <div class="rule-field inline">
+                <input id="texmem" class="txt quota-small" type="text" placeholder="예시: 200" required><span class="suffix">MB</span>
+              </div>
+            </div>
+          <div class="rule-row">
+            <div class="sub-label">기기 착용 여부</div>
+            <div class="rule-field">
+              <div class="choicebar" role="group" data-target="rule1" aria-label="기기 착용 여부 선택">
+                <button type="button" class="chip" data-value="device-free">자유</button>
+                <button type="button" class="chip" data-value="device-cam-req">캠트 이상 필수</button>
+                <button type="button" class="chip" data-value="device-half-req">반트 이상 필수</button>
+                <button type="button" class="chip" data-value="device-full-req">풀트 필수</button>
+                <button type="button" class="chip custom" data-input="rule1-custom">기타</button>
+              </div>
+              <input type="text" id="rule1-custom" class="txt title-half chip-input" placeholder="예시: 차렷도 되지만 게임 조작이 어려움 등" hidden>
+              <input type="hidden" id="rule1" required>
+            </div>
+          </div>
+          <div class="rule-row">
+            <div class="sub-label">묵언 허용 여부</div>
+            <div class="rule-field">
+              <div class="choicebar" role="group" data-target="rule2" aria-label="묵언 허용 여부 선택">
+                <button type="button" class="chip" data-value="silence-allow">허용</button>
+                <button type="button" class="chip" data-value="silence-cam-allow">캠트 이상 허용</button>
+                <button type="button" class="chip" data-value="silence-half-allow">반트 이상 허용</button>
+                <button type="button" class="chip" data-value="silence-full-allow">풀트만 허용</button>
+                <button type="button" class="chip" data-value="silence-ban">금지</button>
+                <button type="button" class="chip custom" data-input="rule2-custom">기타</button>
+              </div>
+              <input type="text" id="rule2-custom" class="txt title-half chip-input" placeholder="예시: 마이크 권장이고 필수는 아님 등" hidden>
+              <input type="hidden" id="rule2" required>
+            </div>
+          </div>
+          <div class="rule-row">
+            <div class="sub-label">PCSS 허용 여부</div>
+            <div class="rule-field">
+              <div class="choicebar" role="group" data-target="rule3" aria-label="PCSS 허용 여부 선택">
+                <button type="button" class="chip" data-value="pcss-allow">허용</button>
+                <button type="button" class="chip" data-value="pcss-ban">금지</button>
+                <button type="button" class="chip custom" data-input="rule3-custom">기타</button>
+              </div>
+              <input type="text" id="rule3-custom" class="txt title-half chip-input" placeholder="예시: 사진 교류회에서 촬영 중에만 부분적 허용 등" hidden>
+              <input type="hidden" id="rule3" required>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. 복장 규칙 (칩 버튼) -->
+      <section class="step collapsed" data-require="choice">
+        <div class="label">4. 복장 규칙</div>
+        <div class="choicebar" role="group" data-target="mode" data-desc-target="mode-desc" aria-label="복장 규칙 선택">
+          <button type="button" class="chip" data-value="attire-conservative" data-desc="일반적으로 공공장소에서 입어도 문제 없는 복장">건전한 복장</button>
+          <button type="button" class="chip" data-value="attire-moderate" data-desc="속옷, 수영복, 비키니(마이크로 제외) 등 15금 수위의 복장">적당한 노출</button>
+          <button type="button" class="chip" data-value="attire-free" data-desc="복장 제한 없음">자유 복장</button>
+          <button type="button" class="chip" data-value="attire-nude" data-desc="알몸, 또는 그에 준하는 복장만 허용">알몸만 허용</button>
+          <button type="button" class="chip custom" data-input="mode-custom">기타</button>
+        </div>
+        <p class="chip-desc" id="mode-desc" hidden></p>
+        <input type="text" id="mode-custom" class="txt title-half chip-input" placeholder="예시: 역바니 교류회니까 역바니만 허용 등" hidden>
+        <input type="hidden" id="mode" required>
+      </section>
+
+      <!-- 5. 상호작용 규칙 (칩 버튼) -->
+      <section class="step collapsed" data-require="choice">
+        <div class="label">5. 상호작용 규칙</div>
+        <div class="choicebar" role="group" data-target="interaction" data-desc-target="interaction-desc" aria-label="상호작용 규칙 선택">
+          <button type="button" class="chip" data-value="interaction-free" data-desc="쓰담, 볼 터치 등 공공장소에서 해도 문제 없는 행위만 허용">건전하게</button>
+          <button type="button" class="chip" data-value="interaction-need" data-desc="키스, 가슴 터치 등 규칙 상 성행위에 포함하지 않는 행위까지 허용">약한 수위</button>
+          <button type="button" class="chip" data-value="interaction-none" data-desc="상호작용 제한 없음">제한 없음</button>
+          <button type="button" class="chip custom" data-input="interaction-custom">기타</button>
+        </div>
+        <p class="chip-desc" id="interaction-desc" hidden></p>
+        <input type="text" id="interaction-custom" class="txt title-half chip-input" placeholder="예시: 기본은 약한 수위고 벌칙 타임만 제한 없음 등" hidden>
+        <input type="hidden" id="interaction" required>
+      </section>
+
+      <!-- 6. 그 외 안내사항 (텍스트) -->
+      <section class="step collapsed" data-require="text">
+        <div class="label">6. 그 외 안내사항</div>
+        <textarea id="notice" class="txt title-big triple" placeholder="위에 없는 내용 중 안내해야 할 내용들을 기재"></textarea>
+      </section>
+
+      <!-- 7. 규칙 위반시 조치 (텍스트) -->
+      <section class="step collapsed" data-require="text">
+        <div class="label">7. 규칙 위반시 조치</div>
+        <textarea id="penalty" class="txt title-big triple" placeholder="예시: 1차 경고/2차 킥, 주최자 지시를 따르지 않으면 강제 퇴장 조치 등"></textarea>
+      </section>
+
+    <!-- 완료 버튼: 마지막 단계까지 채워지면 표시 -->
+    <div class="nav collapsed">
+      <button class="btn done" type="button">완료</button>
+    </div>
+
+    <div id="result-popup" class="modal" hidden>
+      <div class="modal-content">
+        <button type="button" class="close-btn" aria-label="닫기"><span aria-hidden="true">&times;</span></button>
+        <p class="guide-text"><img src="001.png" alt="출력 활용 안내"><br><br>
+          ▷ 아래에 생성된 내용을 모집글 제목/내용에 각각 복사하기<br>
+          ▷ 내용 부분은 PC 글쓰기 화면 기준 우상단에 있는 코딩 모드(빨간색 원)로 들어간 다음 붙여넣기<br>
+          - 양식 관리 + 하이퍼링크 기능을 위해서 약간 번거롭더라도 양해 바람<br>
+          - 모바일에서 작성 시 공앱은 코딩 모드가 불가능하므로 브라우저로 들어가서 써야 함<br><br><hr><br></p>
+        <div class="result-row">
+          <label class="result-label" for="result-title">모집글 제목</label>
+          <input id="result-title" class="txt result-field" readonly>
+        </div>
+        <div class="result-row">
+          <label class="result-label" for="result-body">모집글 내용</label>
+          <textarea id="result-body" class="txt result-field" readonly></textarea>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    const steps = [...document.querySelectorAll('.step')];
+    const nav = document.querySelector('.nav');
+    const popup = document.getElementById('result-popup');
+    const resultTitle = document.getElementById('result-title');
+    const resultBody = document.getElementById('result-body');
+    const popupContent = popup.querySelector('.modal-content');
+    popup.querySelector('.close-btn').addEventListener('click', () => {
+      popupContent.classList.remove('show');
+      popupContent.classList.add('hide');
+      popupContent.addEventListener('animationend', () => {
+        popup.hidden = true;
+        popupContent.classList.remove('hide');
+      }, { once: true });
+    });
+
+    let visibleCount = 1; // 처음엔 1개만 보임
+    let doneShown = false;
+
+    function setValidity(el, ok){ el.classList.toggle('is-valid', ok); }
+
+      function validateStep(step){
+        const type = step.dataset.require; let ok = false;
+        if(type === 'selects'){
+          const sels = step.querySelectorAll('select'); ok = true;
+          sels.forEach(sel=>{ const v = sel.value !== ''; setValidity(sel, v); ok = ok && v; });
+          const p = step.querySelector('#pickup');
+          if(p){ const pv = !!p.value.trim(); setValidity(p, pv); ok = ok && pv; }
+        } else if(type === 'select'){
+          const sel = step.querySelector('select'); ok = !!sel && sel.value !== ''; setValidity(sel, ok);
+        } else if(type === 'text'){
+          const t = step.querySelector('.txt'); ok = !!t.value.trim(); setValidity(t, ok);
+        } else if(type === 'texts'){
+          const ts = step.querySelectorAll('.txt'); ok = true;
+          ts.forEach(t=>{ const v = !!t.value.trim(); setValidity(t, v); ok = ok && v; });
+        } else if(type === 'number'){
+          const n = step.querySelector('.txt'); const v = Number(n.value); ok = Number.isFinite(v) && v > 0; setValidity(n, ok);
+        } else if(type === 'choice'){
+          const hs = step.querySelectorAll('input[type="hidden"]'); ok = true;
+          hs.forEach(h=>{ const v = !!h.value; ok = ok && v; });
+        } else if(type === 'rules'){
+        const hs = step.querySelectorAll('input[type="hidden"]'); ok = true;
+        hs.forEach(h=>{ const v = !!h.value; ok = ok && v; });
+        const q = step.querySelector('#quota');
+        const nv = Number(q.value); const qok = Number.isFinite(nv) && nv > 0; setValidity(q, qok); ok = ok && qok;
+        const tm = step.querySelector('#texmem');
+        const tv = Number(tm.value); const tmok = Number.isFinite(tv) && tv > 0; setValidity(tm, tmok); ok = ok && tmok;
+      }
+      return ok;
+    }
+
+      function animateReveal(el){
+        el.classList.remove('collapsed');
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(6px)';
+        el.style.transition = 'none';
+        requestAnimationFrame(()=>{
+          el.style.transition = 'opacity .7s ease, transform .7s ease';
+          el.style.opacity = '1';
+          el.style.transform = 'none';
+          el.addEventListener('transitionend', ()=>{
+            el.style.transition = '';
+            el.style.opacity = '';
+            el.style.transform = '';
+          }, { once:true });
+        });
+      }
+
+      function revealNext(){
+        if(visibleCount >= steps.length) return;
+        if(visibleCount === 5){
+          animateReveal(steps[5]);
+          animateReveal(steps[6]);
+          visibleCount += 2;
+          return;
+        }
+        const next = steps[visibleCount];
+        animateReveal(next);
+        visibleCount++;
+      }
+
+    function showDone(){
+      if(doneShown) return;
+      doneShown = true;
+      nav.classList.remove('collapsed');
+      nav.style.opacity = '0';
+      nav.style.transform = 'translateY(6px)';
+      nav.style.transition = 'none';
+      requestAnimationFrame(()=>{
+        nav.style.transition = 'opacity .7s ease, transform .7s ease';
+        nav.style.opacity = '1';
+        nav.style.transform = 'none';
+        nav.addEventListener('transitionend', ()=>{
+          nav.style.transition = '';
+          nav.style.opacity = '';
+          nav.style.transform = '';
+        }, { once:true });
+      });
+    }
+
+    // 초기 접기
+    steps.slice(1).forEach(s => s.classList.add('collapsed'));
+
+    // 입력 변화 → 유효성/테두리 갱신 + 자동 다음 단계 표시
+    ['input','change'].forEach(ev=>{
+      document.addEventListener(ev, e=>{
+        const s = e.target.closest('.step');
+        if(!s) return;
+        const ok = validateStep(s);
+        const idx = steps.indexOf(s);
+        if(idx === visibleCount-1 && ok){
+          if(idx === steps.length-1) showDone();
+          else revealNext();
+        }
+      });
+    });
+
+    // 칩 선택 처리
+    document.addEventListener('click', (e)=>{
+      const chip = e.target.closest('.chip');
+      if(!chip) return;
+      const bar = chip.closest('.choicebar');
+      bar.querySelectorAll('.chip').forEach(c=>c.setAttribute('aria-pressed','false'));
+      chip.setAttribute('aria-pressed','true');
+      const stepEl = chip.closest('.step');
+      const hidden = document.getElementById(bar.dataset.target);
+      const hidden2 = document.getElementById(bar.dataset.target2);
+      const descEl = document.getElementById(bar.dataset.descTarget);
+      const field = bar.closest('.rule-field');
+      const inputs = (field || stepEl).querySelectorAll('.chip-input');
+      if(chip.classList.contains('custom')){
+        if(descEl) descEl.hidden = true;
+        inputs.forEach((input, idx)=>{
+          input.hidden = false;
+          if(idx === 0) input.focus();
+          const h = idx === 0 ? hidden : hidden2;
+          if(h) h.value = input.value.trim();
+          input.oninput = () => {
+            if(h) h.value = input.value.trim();
+            validateStep(stepEl);
+          };
+        });
+      } else {
+        if(descEl){
+          const d = chip.dataset.desc || '';
+          descEl.textContent = d;
+          descEl.hidden = d === '';
+        }
+        inputs.forEach(input=>{ input.hidden = true; input.value = ''; });
+        if(hidden) hidden.value = chip.dataset.value;
+        if(hidden2) hidden2.value = chip.dataset.url || '';
+      }
+      const ok = validateStep(stepEl);
+      const idx = steps.indexOf(stepEl);
+      if(idx === visibleCount-1 && ok){
+        if(idx === steps.length-1) showDone();
+        else revealNext();
+      }
+    });
+
+    document.querySelector('.btn.done').addEventListener('click', () => {
+      const getChipText = id => {
+        const bar = document.querySelector(`[data-target="${id}"]`);
+        if(!bar) return '';
+        const chip = bar.querySelector('.chip[aria-pressed="true"]');
+        if(!chip) return '';
+        if(chip.classList.contains('custom')){
+          const input = document.getElementById(`${id}-custom`);
+          return input ? input.value.trim() : '';
+        }
+        return chip.textContent.trim();
+      };
+      const m = document.getElementById('m').value;
+      const d = document.getElementById('d').value;
+      const sh = document.getElementById('sh').value;
+      const sm = document.getElementById('sm').value;
+      const eh = document.getElementById('eh').value;
+      const em = document.getElementById('em').value;
+      const title = document.getElementById('title').value.trim();
+      const pickup = document.getElementById('pickup').value.trim();
+      const desc = document.getElementById('desc').value.trim();
+      const quota = document.getElementById('quota').value.trim();
+      const texmem = document.getElementById('texmem').value.trim();
+      const worldName = document.getElementById('worldName').value.trim();
+      const worldUrl = document.getElementById('worldUrl').value.trim();
+      const rule1 = getChipText('rule1');
+      const rule2 = getChipText('rule2');
+      const rule3 = getChipText('rule3');
+      const getChoiceInfo = id => {
+        const bar = document.querySelector(`[data-target="${id}"]`);
+        const chip = bar?.querySelector('.chip[aria-pressed="true"]');
+        if(!chip) return { text:'', desc:'' };
+        if(chip.classList.contains('custom')){
+          const input = document.getElementById(`${id}-custom`);
+          return { text: input.value.trim(), desc: '' };
+        }
+        return { text: chip.textContent.trim(), desc: chip.dataset.desc || '' };
+      };
+      const modeInfo = getChoiceInfo('mode');
+      const interactionInfo = getChoiceInfo('interaction');
+      const notice = document.getElementById('notice').value.trim();
+      const penalty = document.getElementById('penalty').value.trim();
+      const pad = n => n.toString().padStart(2,'0');
+      const dateStr = `${pad(m)}/${pad(d)}`;
+      const timeStr = `${pad(sh)}:${pad(sm)}~${pad(eh)}:${pad(em)}`;
+      const lines = [];
+      lines.push(`<p><strong style="font-size: 24px;">① 교류회 내용</strong></p>`);
+      lines.push(`<p>${desc}</p>`);
+      lines.push(`<br>`);
+      lines.push(`<p><strong style="font-size: 24px;">② 교류회 규칙</strong></p>`);
+      lines.push(`<p>&lt;필독&gt;</p>`);
+      lines.push(`<p>&nbsp;- 교류회 중엔 최소 주황불로 설정, 임의로 포탈 설치 금지</p>`);
+      lines.push(`<p>&nbsp;- 매너에 어긋나는 행동 금지</p>`);
+      lines.push(`<p>&nbsp;- 채널 규칙에서 '참가자용 안내사항' 읽어보기</p>`);
+      lines.push(`<br>`);
+      lines.push(`<p>&lt;기본 규칙&gt;</p>`);
+      lines.push(`<p>&nbsp;- 집합 장소: <a href="${worldUrl}">${worldName}</a></p>`);
+      lines.push(`<p>&nbsp;- 교류회 정원: ${quota}명</p>`);
+      lines.push(`<p>&nbsp;- 텍스쳐 메모리 제한: ${texmem}MB</p>`);
+      lines.push(`<p>&nbsp;- 기기 착용 여부: ${rule1}</p>`);
+      lines.push(`<p>&nbsp;- 묵언 허용 여부: ${rule2}</p>`);
+      lines.push(`<p>&nbsp;- PCSS 허용 여부: ${rule3}</p>`);
+      lines.push(`<br>`);
+      lines.push(`<p>&lt;복장 규칙&gt;</p>`);
+      lines.push(`<p>${modeInfo.text}${modeInfo.desc ? ` <span style="font-size: 12px;">(${modeInfo.desc})</span>` : ''}</p>`);
+      lines.push(`<br>`);
+      lines.push(`<p>&lt;상호작용 규칙&gt;</p>`);
+      lines.push(`<p>${interactionInfo.text}${interactionInfo.desc ? ` <span style="font-size: 12px;">(${interactionInfo.desc})</span>` : ''}</p>`);
+      lines.push(`<br>`);
+      lines.push(`<p>&lt;픽업 여부&gt;</p>`);
+      lines.push(`<p>${pickup}</p>`);
+      lines.push(`<br>`);
+      lines.push(`<p><strong style="font-size: 24px;">③ 그 외 안내사항</strong></p>`);
+      lines.push(`<p>${notice}</p>`);
+      lines.push(`<br>`);
+      lines.push(`<p><strong style="font-size: 24px;">④ 규칙 위반 시 조치</strong></p>`);
+      lines.push(`<p>${penalty}</p>`);
+        const html = lines.join('\n');
+      const titleStr = `[${dateStr} ${timeStr}] ${title}`;
+      resultTitle.value = titleStr;
+      resultBody.value = html;
+      navigator.clipboard?.writeText(html).catch(()=>{});
+      popup.hidden = false;
+      popupContent.classList.remove('hide');
+      void popupContent.offsetWidth;
+      popupContent.classList.add('show');
+    });
+  </script>
+</body>
+</html>
