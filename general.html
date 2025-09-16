@@ -179,7 +179,7 @@
             <div class="sub-label">픽업 여부</div>
             <div class="rule-field">
               <label class="sr-only" for="pickup">픽업 여부</label>
-              <input id="pickup" class="txt title-half" type="text" placeholder="예시: 없음, 20분마다, 23시에 한 번 등" required>
+              <input id="pickup" class="txt wide" type="text" placeholder="예시: 없음, 20분마다, 23시에 한 번 등" required>
             </div>
           </div>
         </div>
@@ -192,13 +192,13 @@
           <div class="rule-row">
             <div class="sub-label">제목</div>
             <div class="rule-field">
-              <input id="title" class="txt title-big" type="text" placeholder="예시: 저댄 교류회, 음주 교류회 등" required>
+              <input id="title" class="txt wide" type="text" placeholder="예시: 저댄 교류회, 음주 교류회 등" required>
             </div>
           </div>
           <div class="rule-row">
             <div class="sub-label">내용</div>
             <div class="rule-field">
-              <input id="desc" class="txt title-big" type="text" placeholder="예시: 저댄 월드에서 춤추기, 노래 들으면서 술 먹기 등" required>
+              <input id="desc" class="txt wide" type="text" placeholder="예시: 저댄 월드에서 춤추기, 노래 들으면서 술 먹기 등" required>
             </div>
           </div>
         </div>
@@ -216,8 +216,8 @@
                   <button type="button" class="chip" data-value="Arcalive 부끄러" data-url="https://vrchat.com/home/world/wrld_f760f71c-281d-4d26-93b3-0dbb983843ee" data-tooltip="출발 시간이 겹치지 않는 이상 New Arcalive를 최우선으로 할 것">Arcalive 부끄러</button>
                   <button type="button" class="chip custom" data-tooltip="출발 시간이 겹치지 않는 이상 New Arcalive를 최우선으로 할 것">기타</button>
                 </div>
-                <input type="text" class="txt title-half chip-input" placeholder="월드 이름" hidden>
-                <input type="text" class="txt title-half chip-input" placeholder="월드 URL" hidden>
+                <input type="text" class="txt wide chip-input" placeholder="월드 이름" hidden>
+                <input type="text" class="txt wide chip-input" placeholder="월드 URL" hidden>
                 <input type="hidden" id="worldName" required>
                 <input type="hidden" id="worldUrl" required>
               </div>
@@ -244,7 +244,7 @@
                 <button type="button" class="chip" data-value="device-full-req">풀트 필수</button>
                 <button type="button" class="chip custom" data-input="rule1-custom">기타</button>
               </div>
-              <input type="text" id="rule1-custom" class="txt title-half chip-input" placeholder="예시: 차렷도 되지만 게임 조작이 어려움 등" hidden>
+              <input type="text" id="rule1-custom" class="txt wide chip-input" placeholder="예시: 차렷도 되지만 게임 조작이 어려움 등" hidden>
               <input type="hidden" id="rule1" required>
             </div>
           </div>
@@ -259,7 +259,7 @@
                 <button type="button" class="chip" data-value="silence-ban">금지</button>
                 <button type="button" class="chip custom" data-input="rule2-custom">기타</button>
               </div>
-              <input type="text" id="rule2-custom" class="txt title-half chip-input" placeholder="예시: 마이크 권장이고 필수는 아님 등" hidden>
+              <input type="text" id="rule2-custom" class="txt wide chip-input" placeholder="예시: 마이크 권장이고 필수는 아님 등" hidden>
               <input type="hidden" id="rule2" required>
             </div>
           </div>
@@ -271,7 +271,7 @@
                 <button type="button" class="chip" data-value="pcss-ban">금지</button>
                 <button type="button" class="chip custom" data-input="rule3-custom">기타</button>
               </div>
-              <input type="text" id="rule3-custom" class="txt title-half chip-input" placeholder="예시: 사진 교류회에서 촬영 중에만 부분적 허용 등" hidden>
+              <input type="text" id="rule3-custom" class="txt wide chip-input" placeholder="예시: 사진 교류회에서 촬영 중에만 부분적 허용 등" hidden>
               <input type="hidden" id="rule3" required>
             </div>
           </div>
@@ -287,7 +287,7 @@
           <button type="button" class="chip custom" data-input="mode-custom">기타</button>
         </div>
         <p class="chip-desc" id="mode-desc" hidden></p>
-        <input type="text" id="mode-custom" class="txt title-half chip-input" placeholder="예시: 바니걸 교류회니까 바니걸만 허용 등" hidden>
+        <input type="text" id="mode-custom" class="txt wide chip-input" placeholder="예시: 바니걸 교류회니까 바니걸만 허용 등" hidden>
         <input type="hidden" id="mode" required>
       </section>
 
@@ -300,20 +300,20 @@
           <button type="button" class="chip custom" data-input="interaction-custom">기타</button>
         </div>
         <p class="chip-desc" id="interaction-desc" hidden></p>
-        <input type="text" id="interaction-custom" class="txt title-half chip-input" placeholder="예시: 쓰담 중에 찌찌 쓰담은 안 됨 등" hidden>
+        <input type="text" id="interaction-custom" class="txt wide chip-input" placeholder="예시: 쓰담 중에 찌찌 쓰담은 안 됨 등" hidden>
         <input type="hidden" id="interaction" required>
       </section>
 
       <!-- 6. 그 외 안내사항 (텍스트) -->
       <section class="step collapsed" data-require="text">
         <div class="label">6. 그 외 안내사항</div>
-        <textarea id="notice" class="txt title-big triple" placeholder="위에 없는 내용 중 안내해야 할 내용들을 기재"></textarea>
+        <textarea id="notice" class="txt wide triple" placeholder="위에 없는 내용 중 안내해야 할 내용들을 기재"></textarea>
       </section>
 
       <!-- 7. 규칙 위반시 조치 (텍스트) -->
       <section class="step collapsed" data-require="text">
         <div class="label">7. 규칙 위반시 조치</div>
-        <textarea id="penalty" class="txt title-big triple" placeholder="예시: 1차 경고/2차 킥, 주최자 지시를 따르지 않으면 강제 퇴장 조치 등"></textarea>
+        <textarea id="penalty" class="txt wide triple" placeholder="예시: 1차 경고/2차 킥, 주최자 지시를 따르지 않으면 강제 퇴장 조치 등"></textarea>
       </section>
 
     <!-- 완료 버튼: 마지막 단계까지 채워지면 표시 -->
@@ -554,10 +554,10 @@
       lines.push(`<p>&lt;필독&gt;</p>`);
       lines.push(`<p>&nbsp;- 교류회 중엔 최소 주황불로 설정, 임의로 포탈 설치 금지</p>`);
       lines.push(`<p>&nbsp;- 매너에 어긋나는 행동 금지</p>`);
-      lines.push(`<p>&nbsp;- 채널 규칙에서 '참가자용 안내사항' 읽어보기</p>`);
+      lines.push(`<p>&nbsp;- <a href="https://arca.live/b/vrchat/147298966" target="_blank" rel="noopener noreferrer">채널 규칙</a>에서 '참가자용 안내사항' 읽어보기</p>`);
       lines.push(`<br>`);
       lines.push(`<p>&lt;기본 규칙&gt;</p>`);
-      lines.push(`<p>&nbsp;- 집합 장소: <a href="${worldUrl}" target="_blank">${worldName}</a></p>`);
+      lines.push(`<p>&nbsp;- 집합 장소: <a href="${worldUrl}" target="_blank" rel="noopener noreferrer">${worldName}</a></p>`);
       lines.push(`<p>&nbsp;- 교류회 정원: ${quota}명</p>`);
       lines.push(`<p>&nbsp;- 텍스쳐 메모리 제한: ${texmem}MB</p>`);
       lines.push(`<p>&nbsp;- 기기 착용 여부: ${rule1}</p>`);
